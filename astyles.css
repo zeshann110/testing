@@ -1,0 +1,250 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #3D4956; /* Update the background color of the body */
+  color: #ffffff;
+}
+
+.header {
+  background-color: #3D4956;
+  padding: 10px;
+  text-align: center;
+}
+
+.header img {
+  height: 50px;
+  width: auto;
+}
+
+h1 {
+  color: #66FF99;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.countdown {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.whitepaper-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #66FF99;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.whitepaper-button:hover {
+  background-color: darkgreen;
+}
+
+
+/* Common styles for all screen sizes */
+.entry-box {
+  background-color: #fff; /* Update the background color of the entry-box */
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #000000;
+  overflow-wrap: break-word; /* Add this property to prevent text overflow */
+}
+
+.entry-box p {
+  margin: 20px;
+}
+
+.entry-box ul {
+  list-style-type: none;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.entry-box li {
+  margin-bottom: 15px;
+}
+
+.entry-box a {
+  color: #7061B2;
+  text-decoration: none;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 500px) {
+  .entry-box p {
+    margin: 10px;
+  }
+
+  .entry-box ul {
+    padding: 10px;
+    margin-top: 5px;
+  }
+}
+
+
+
+
+.qr-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.qr-section h2 {
+  margin-top: 0;
+}
+
+.qr-section img {
+  max-width: 200px;
+  height: auto;
+}
+
+.progress-bar-container {
+  width: 80%;
+  margin: 10px auto;
+  background-color: lightgray;
+  border-radius: 4px;
+  height: 20px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0;
+  border-radius: 4px;
+}
+
+.progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+}
+
+
+
+#participant-count {
+text-align: center;
+  margin-top: 20px;
+}
+
+p.note {
+  text-align: center;
+  font-style: italic;
+  color: #666666;
+  margin-top: 0;
+}
+
+.eligibility {
+  text-align: center;
+}
+
+
+/* Roadmap Section */
+.roadmap {
+  margin-top: 40px;
+}
+
+.roadmap h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.roadmap ol {
+  counter-reset: roadmap-counter;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.roadmap li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.roadmap li:before {
+  content: counter(roadmap-counter);
+  counter-increment: roadmap-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.roadmap li:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 2px;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+.roadmap li:last-child:after {
+  height: 10px;
+}
+
+.roadmap li:last-child:before {
+  height: 10px;
+}
+
+.roadmap li:last-child:after,
+.roadmap li:last-child:before {
+  background-color: transparent;
+}
+
+
+.official-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.official-links h2 {
+  margin-top: 0;
+}
+
+.official-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.official-links li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.official-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #3D4956;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  color: #fff;
+}
