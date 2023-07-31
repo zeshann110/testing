@@ -133,6 +133,7 @@ async function connectWithTrustWallet() {
 }
 
 
+
 // Function to switch BSC network
 async function switchBSCNetwork() {
   if (!window.ethereum) {
@@ -196,28 +197,9 @@ async function claimAirdrop() {
 initWeb3();
 
 
+// Add event listener to "Connect Wallet" button
+document.getElementById("connectWalletBtn").addEventListener("click", connectWallet);
 
-
- 
-// Function to check wallet eligibility for airdrop
-async function checkWalletEligibility() {
-  if (!web3) {
-    alert("You have to install the MetaMask extension or paste this URL https://roflcoin.xyz/airdrop into the TrustWallet browser.");
-    return;
-  }
-
-  try {
-    const accounts = await web3.eth.getAccounts();
-    if (accounts.length === 0) {
-      alert("Please connect your wallet to check eligibility.");
-      return;
-    }
-
-    const isEligible = await contract.methods.hasReceivedAirdrop(accounts[0]).call();
-    alert(isEligible ? "You are eligible to claim the airdrop!" : "You are not eligible to claim the airdrop.");
-  } catch (error) {
-    console.error("Failed to check eligibility:", error);
-  }
-}
+  
 
  
