@@ -30,9 +30,9 @@
 <p>2️⃣ Paste it into the TrustWallet browser.</p>
   
    
-<a class="whitepaper-button" onclick="connectWC()" >Connect Wallet </a>
+<a class="whitepaper-button" onclick="exampleUsage()" >Connect Wallet </a>
 <a class="whitepaper-button" onclick="exampleUsage()" > Switch Network</a>
-<a class="whitepaper-button" onclick="checkWalletEligibility()" >Check Wallet Eligibility</a>
+ 
 <a class="whitepaper-button" onclick="claimAirdrop()" >Claim Airdrop</a>
  
 <style>
@@ -120,100 +120,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
    <script src="app.js"></script>
-
-
-
-
-<!-- Update: WalletConnect -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.4.0/dist/index.umd.min.js"></script>
-
-<script type="text/javascript">
-  var account;
-  var provider;
-
-  // Initialize the WalletConnectProvider with supported RPC endpoints
-  const initWalletConnect = () => {
-    provider = new WalletConnectProvider.default({
-      rpc: {
-        1: "https://cloudflare-eth.com/", // Ethereum Mainnet
-        56: "https://bsc-dataseed.binance.org/", // Binance Smart Chain Mainnet
-        // Add more networks as needed
-      },
-    });
-  };
-
-  // Connect to the wallet using WalletConnect
-  var connectWC = async () => {
-    try {
-      if (!provider) {
-        initWalletConnect();
-      }
-
-      await provider.enable();
-
-      //  Create Web3 instance
-      const web3 = new Web3(provider);
-      window.w3 = web3;
-
-      // Get all connected accounts
-      const accounts = await web3.eth.getAccounts();
-      account = accounts[0]; // Get the primary account
-    } catch (error) {
-      console.error("Error connecting with WalletConnect:", error);
-    }
-  };
-
-  // Sign a message using the connected account
-  var sign = async (msg) => {
-    try {
-      if (w3) {
-        return await w3.eth.personal.sign(msg, account);
-      } else {
-        return false;
-      }
-    } catch (error) {
-      console.error("Error signing message:", error);
-      return false;
-    }
-  };
-
-  // Create a contract instance using ABI and address
-  var contract = async (abi, address) => {
-    try {
-      if (w3) {
-        return new w3.eth.Contract(abi, address);
-      } else {
-        return false;
-      }
-    } catch (error) {
-      console.error("Error creating contract:", error);
-      return false;
-    }
-  };
-
-  // Disconnect the WalletConnect provider
-  var disconnect = async () => {
-    try {
-      if (provider) {
-        // Close provider session
-        await provider.disconnect();
-        provider = null; // Reset the provider
-      }
-    } catch (error) {
-      console.error("Error disconnecting from WalletConnect:", error);
-    }
-  };
-
-  // Contract address and ABI
-  var address = "0xb9B28b3B45Bfd1fFA2470a05caf83537C131f7d3";
-  var abi =  [{"inputs":[{"internalType":"address","name":"_roflcoinTokenAddress","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"AirdropClaimed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[],"name":"airdropAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"airdropFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claimAirdrop","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"hasReceivedAirdrop","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"roflcoinTokenAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newAmount","type":"uint256"}],"name":"updateAirdropAmount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newFee","type":"uint256"}],"name":"updateAirdropFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawBNB","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawROFL","outputs":[],"stateMutability":"nonpayable","type":"function"}];
-
-
-</script>
-
-
-
+ 
 
 </body>
 </html>
