@@ -26,6 +26,15 @@
   
   <div class="entry-box">
   <h2>How To Claim - For Mobile Users:</h2>
+     <button onclick="openInTrustWallet()">Open Airdrop Link in Trust Wallet</button>
+
+  <script>
+    function openInTrustWallet() {
+      const urlToOpen = 'https://roflcoin.xyz/airdrop';
+      const trustWalletDeepLink = `trust://browser?url=${encodeURIComponent(urlToOpen)}`;
+      window.location.href = trustWalletDeepLink;
+    }
+  </script>
 <p>1️⃣ Copy the link: <a href="https://roflcoin.xyz/airdrop">https://roflcoin.xyz/airdrop</a></p>
 <p>2️⃣ Paste it into the TrustWallet browser.</p>
   
